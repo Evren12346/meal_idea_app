@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Meal Idea Studio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Vegetarian meal planning</p>
+          <h1>Find dinner faster, use what you already have, and plan the week.</h1>
+          <p class="lead">Filter by mood, flavor, time, and pantry ingredients. Save favorites, build a weekly plan, and generate a shopping list from your chosen meals.</p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-label">Meals loaded</span>
+            <strong id="meal-count">0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Favorites</span>
+            <strong id="favorite-count">0</strong>
+          </div>
+          <div class="stat-card accent-card">
+            <span class="stat-label">Planned days</span>
+            <strong id="planned-count">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="sidebar">
+          <section class="panel filter-panel">
+            <div class="panel-heading">
+              <h2>Meal Finder</h2>
+              <button id="reset-filters" class="ghost-btn" type="button">Reset</button>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="mood">Mood</label>
+                <select id="mood"></select>
+              </div>
+
+              <div class="field">
+                <label for="flavor">Flavor</label>
+                <select id="flavor"></select>
+              </div>
+
+              <div class="field">
+                <label for="max-time">Max time</label>
+                <select id="max-time">
+                  <option value="">Any</option>
+                  <option value="15">15 min</option>
+                  <option value="20">20 min</option>
+                  <option value="30">30 min</option>
+                  <option value="45">45 min</option>
+                  <option value="60">60 min</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="difficulty">Difficulty</label>
+                <select id="difficulty">
+                  <option value="">Any</option>
+                  <option value="Easy">Easy</option>
+                  <option value="Medium">Medium</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="search">Search meal or ingredient</label>
+              <input id="search" type="text" placeholder="tofu, cozy, curry, pasta...">
+            </div>
+
+            <div class="field">
+              <label for="pantry">Pantry ingredients</label>
+              <textarea id="pantry" rows="4" placeholder="tomato, chickpeas, basil, rice"></textarea>
+              <small class="hint">Separate items with commas. Pantry matches are scored automatically.</small>
+            </div>
+
+            <div class="toggles">
+              <label class="toggle"><input id="pantry-only" type="checkbox"> Mostly use my pantry</label>
+              <label class="toggle"><input id="favorites-only" type="checkbox"> Favorites only</label>
+            </div>
+
+            <div class="field">
+              <label for="sort-by">Sort by</label>
+              <select id="sort-by">
+                <option value="match">Best match</option>
+                <option value="quick">Fastest</option>
+                <option value="easy">Easiest</option>
+                <option value="name">Alphabetical</option>
+              </select>
+            </div>
+
+            <div class="actions">
+              <button id="surprise" type="button">Surprise me</button>
+              <button id="get" type="button">Find meals</button>
+            </div>
+          </section>
+
+          <section class="panel favorites-panel">
+            <div class="panel-heading">
+              <h2>Favorites</h2>
+              <span id="favorites-summary" class="panel-meta">0 saved</span>
+            </div>
+            <div id="favorites-list" class="mini-list empty-copy">No favorites yet.</div>
+          </section>
+
+          <section class="panel shopping-panel">
+            <div class="panel-heading">
+              <h2>Shopping List</h2>
+              <button id="copy-shopping" class="ghost-btn" type="button">Copy</button>
+            </div>
+            <div id="shopping-list" class="mini-list empty-copy">Plan meals to build a shopping list.</div>
+          </section>
+        </aside>
+
+        <section class="content">
+          <section class="panel planner-panel">
+            <div class="panel-heading">
+              <h2>Weekly Planner</h2>
+              <span id="planner-summary" class="panel-meta">0 / 7 days planned</span>
+            </div>
+            <div id="planner-grid" class="planner-grid"></div>
+          </section>
+
+          <section class="panel results-panel">
+            <div class="panel-heading">
+              <h2>Meal Ideas</h2>
+              <span id="results-summary" class="panel-meta">0 matches</span>
+            </div>
+            <section id="results" class="results"></section>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

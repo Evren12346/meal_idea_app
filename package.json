@@ -1,0 +1,41 @@
+{
+  "name": "meal-idea-app",
+  "version": "0.1.0",
+  "description": "Simple vegetarian meal idea generator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "desktop": "electron .",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^24.6.0"
+  },
+  "author": "Your Name <you@example.com>",
+  "homepage": "https://example.com",
+  "build": {
+    "appId": "com.mealidea.app",
+    "productName": "Meal Idea",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": ["AppImage","deb"],
+      "category": "Utility"
+    },
+    "mac": {
+      "target": ["dmg"]
+    },
+    "win": {
+      "target": ["nsis"]
+    },
+    "icon": "assets/icon.png"
+  }
+}
