@@ -12,7 +12,24 @@ The app now helps with more than random inspiration:
 - generate a shopping list from planned meals
 - open recipe links quickly
 
-How to run
+## Standard Run (Local Workspace)
+
+From this folder:
+
+```bash
+npm install
+./launch.sh
+```
+
+This opens the desktop Electron app.
+
+Manual desktop launch equivalent:
+
+```bash
+npm run desktop
+```
+
+## Additional Run Options
 
 - Open the file in a browser: [meal_idea_app/index.html](meal_idea_app/index.html)
 - Or serve locally (recommended) from the `meal_idea_app` folder:
@@ -23,7 +40,7 @@ python -m http.server 8000
 # then open http://localhost:8000
 ```
 
-Node (API + static server)
+### Node Server (API + static)
 
 Install dependencies and start the server which also exposes `/api/meals`:
 
@@ -34,7 +51,7 @@ npm start
 # then open http://localhost:3000
 ```
 
-Electron (desktop)
+### Electron Desktop (manual)
 
 Run the app as a desktop application using Electron. Install dev dependencies then run the `desktop` script:
 
